@@ -27,6 +27,8 @@ def render_cell(value):
         return None
     if "type" not in data:
         return None
+    if not isinstance(data["type"], str):
+        return None
     if data["type"] in GEOJSON_TYPES:
         # Reduce floating point accuracy to something sensible
         return json.dumps(round_floats(data))

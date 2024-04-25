@@ -41,3 +41,14 @@ def test_render_cell_truncates_floating_points():
         "type": "MultiPolygon",
         "coordinates": [[[[-122.33006, 37.44676], [-122.32875, 37.44794]]]],
     } == json.loads(actual)
+
+
+def test_render_cell_not_confused_by_other_properties():
+    # https://github.com/simonw/datasette-leaflet-geojson/issues/24
+    value = json.dumps(
+        {
+            "type": {"type": "string"},
+        }
+    )
+    actual = render_cell(value)
+    assert actual is None
