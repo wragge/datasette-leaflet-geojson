@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
         div.style.display = "flex";
         div.style.justifyContent = "center";
         div.style.alignItems = "center";
-        div.style.height = "400px";
+        div.style.height = "200px";
 
         if (map) { map.remove(); }
         el.appendChild(div);
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
       a.style.display = "flex";
       a.style.justifyContent = "center";
       a.style.alignItems = "center";
-      a.style.height = "400px";
+      a.style.height = "200px";
       a.addEventListener("click", (ev) => {
         ev.preventDefault();
         a.parentNode.removeChild(a);
