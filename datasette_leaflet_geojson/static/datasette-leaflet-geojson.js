@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // OK, it should be GeoJSON - display it with leaflet
     let el = document.createElement("div");
     el.style.width = "100%";
-    if (window.DATASETTE_LEAFLET_GEOJSON_DEFAULT_HEIGHT) {
+    if (typeof window.DATASETTE_LEAFLET_GEOJSON_DEFAULT_HEIGHT !== "undefined") {
       let height = window.DATASETTE_LEAFLET_GEOJSON_DEFAULT_HEIGHT;
     } else {
       let height = 200;
