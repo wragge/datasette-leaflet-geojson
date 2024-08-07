@@ -43,9 +43,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // OK, it should be GeoJSON - display it with leaflet
     let el = document.createElement("div");
     el.style.width = "100%";
+    if (window.DATASETTE_LEAFLET_GEOJSON_DEFAULT_HEIGHT) {
+      let height = window.DATASETTE_LEAFLET_GEOJSON_DEFAULT_HEIGHT;
+    } else {
+      let height = 200;
+    }
     el.style.minWidth = "200px";
     el.style.height = "100%";
-    el.style.minHeight = "200px";
+    el.style.minHeight = height + "px";
     el.style.backgroundColor = "#eee";
     while (td.firstChild) {
       td.removeChild(td.firstChild);
